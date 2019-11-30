@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularApp';
+
+  constructor(private service:AuthService,private router:Router){}
+Logout ()
+{
+  this.service.Logout();
+  this.router.navigate(['login']);
 }
+}
+
